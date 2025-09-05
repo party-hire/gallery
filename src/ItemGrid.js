@@ -147,7 +147,10 @@ function ItemGrid() {
       <div className="gallery">
         {items.map((item) => (
           <div key={item.id} onClick={() => openModal(item)}>
-            <img className="gallery-img" src={item.images[0]} alt={item.title} />
+            <img className="gallery-img" 
+                //  src={process.env.PUBLIC_URL + item.images[0]}
+                 src={`${process.env.PUBLIC_URL}${item.images[0]}`}
+                 alt={item.title} />
             <p>{item.title}</p>
             <p>{item.price}</p>
             <p>{item.description}</p>
